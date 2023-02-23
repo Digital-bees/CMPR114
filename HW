@@ -1,0 +1,62 @@
+#Ken Torres
+Month = int(input('\nEnter a month between 1 and 12: '))
+Message = ""
+if Month < 1 or Month > 12:
+    Message = "\nError. Month must be between 1 and 12.\n" + \
+              "Rerun program and try again.\n"        
+else:
+    Message = "\nMonth " + format(Month) + " is in the"
+    if Month >= 1 and Month <= 3:
+        Message += " first"
+    elif Month >= 4 and Month <= 6:
+        Message += " second"
+    elif Month >= 7 and Month <= 9:
+        Message += " third"
+    elif Month >= 10 and Month <= 12:
+        message += " fourth"
+    Message += " quarter.\n"
+print(Message)
+
+
+#Ken Torres
+Number_of_people = int(input("Enter number of people: "))
+Number_of_hotdogs = int(input("Enter number of hot dogs: "))
+Number_of_hotdogs_per_package = 10
+Number_of_buns_per_package = 8
+Total_number_of_hotdogs = Number_of_people * Number_of_hotdogs
+Number_of_hotdog_packages_needed = Total_number_of_hotdogs // Number_of_hotdogs_per_package
+Number_of_hotdog_buns_needed = Total_number_of_hotdogs // Number_of_buns_per_package
+Number_of_hotdogs_left_over =Total_number_of_hotdogs % Number_of_hotdogs_per_package
+Number_of_hotdog_buns_left_over = Total_number_of_hotdogs % Number_of_buns_per_package
+print("Minimum number of packages of hot dogs required =", Number_of_hotdog_packages_needed)
+print("Minimum number of packages of hot dog buns required =", Number_of_hotdog_buns_needed)
+print("Number of hot dogs left over =", Number_of_hotdogs_left_over)
+print("Number of hot dogs buns left over =", Number_of_hotdog_buns_left_over)
+
+
+#Ken Torres
+Price_per_package = 99.00
+Number_of_packages = float(input('\nEnter # of packages purchased: '))
+Message = ""
+if Number_of_packages < 0:
+    Message = "Error. # of packages must be greater than 0.\nRe-run program and try again."
+else:
+    Discount_percentage = 0
+    if Number_of_packages < 10:
+        Discount_percentage = 0
+    elif Number_of_packages >= 10 and Number_of_packages <= 19:
+        Discount_percentage = .10 
+    elif Number_of_packages >= 20 and Number_of_packages <= 49:
+        Discount_percentage = .20 
+    elif Number_of_packages >= 50 and Number_of_packages <= 99:
+        Discount_percentage = .30
+    elif Number_of_packages >= 100:
+        Discount_percentage = .40 
+    Package_total = Number_of_packages * Price_per_package
+    Discount_amount = (Package_total) * Discount_percentage
+    Total = Package_total - Discount_amount
+    Message = "Package total = $" + format(Package_total, ',.2f') + \
+     "\nDiscount Percentage = " + format(Discount_percentage, '.0%') + \
+     "\nDiscount amount = $" + format(Discount_amount, ',.2f') + \
+      "\nGrand total  = $" + format(Total, ',.2f')
+print("\n" + Message + "\n")
